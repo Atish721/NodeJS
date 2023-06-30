@@ -1,0 +1,27 @@
+{
+  "name": "express_learn",
+  "version": "1.0.0",
+  "description": "Learn express quick",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atish721/ExpressJs.git"
+  },
+  "keywords": [
+    "Learn",
+    "NodeJs",
+    "ExpressJs"
+  ],
+  "author": "Atish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atish721/ExpressJs/issues"
+  },
+  "homepage": "https://github.com/Atish721/ExpressJs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,8 @@
+const { add, sub, mult, name } = require('./operatorModule')
+let addtion = add(5, 5)
+let substraction = sub(55, 5)
+let multiplicaton = mult(5, 5)
+console.log(`Addtion : ${addtion}`)
+console.log(`Substraction : ${substraction}`)
+console.log(`Multiplicaton : ${multiplicaton}`)
+console.log(`Name : ${name}`)

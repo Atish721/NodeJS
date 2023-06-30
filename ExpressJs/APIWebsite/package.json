@@ -1,0 +1,25 @@
+{
+  "name": "apiwebsite",
+  "version": "1.0.0",
+  "description": "Learn NodeJS, WeatherApp, DynamicWebsite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev":"nodemon src/index.js"
+  },
+  "keywords": [
+    "Learn",
+    "NodeJS",
+    "ExpressJS",
+    "WeatherApp",
+    "API",
+    "Website"
+  ],
+  "author": "Atish",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0"
+  }
+}

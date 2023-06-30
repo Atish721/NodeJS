@@ -1,0 +1,24 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "Learn NodeJs and NPM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atish721/NodeJs.git"
+  },
+  "keywords": [
+    "learn",
+    "nodejs",
+    "npm"
+  ],
+  "author": "Bosco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atish721/NodeJs/issues"
+  },
+  "homepage": "https://github.com/Atish721/NodeJs#readme"
+}

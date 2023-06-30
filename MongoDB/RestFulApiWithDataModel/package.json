@@ -1,0 +1,23 @@
+{
+  "name": "restfulapiwithdatamodel",
+  "version": "1.0.0",
+  "description": "Leanrn MongoDB with DataModel using ExpressJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon src/app.js -e js",
+    "start":"node src/app.js -e js"
+  },
+  "keywords": [
+    "Learn",
+    "MongoDB",
+    "NodeJS",
+    "DataModel"
+  ],
+  "author": "Atish",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0"
+  }
+}

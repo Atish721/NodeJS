@@ -1,0 +1,22 @@
+{
+  "name": "websiteinexpress",
+  "version": "1.0.0",
+  "description": "Made Sample Website using ExpressJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Lear",
+    "ExpressJS",
+    "NodeJS",
+    "Route",
+    "Website"
+  ],
+  "author": "Atish",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0"
+  }
+}

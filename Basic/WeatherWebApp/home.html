@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel="shortcut icon" href="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/favicon.ico" />
+        <link rel="icon" href="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_16x16.png" sizes="16x16" type="image/png">
+        <link rel="icon" href="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/icons/logo_60x60.png" sizes="60x60" type="image/png">
+        <title>Live Weather</title>
+        <style type='text/css'>
+            @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+
+            html,
+            body {
+                height: 100%;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            body {
+                background-color: #303030 !important;
+                display: grid;
+                place-items: center;
+
+            }
+
+            .card {
+                background-color: #ffffff;
+                border-radius: 50px;
+                color: #6f707d;
+                font-family: 'Marcellus', serif;
+            }
+
+            #heading {
+                font-size: 55px;
+                color: #2b304d;
+            }
+
+            .temp {
+                place-items: center;
+            }
+
+            .temp-details>p>span,
+            .grey {
+                color: #a3acc1;
+                font-size: 12px;
+            }
+
+            .fa {
+                color: #a5a5b1
+            }
+
+            *:focus {
+                outline: none;
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 col-sm-12 col-xs-12">
+                    <div class="card p-4">
+
+                        <div class="d-flex">
+                            <h6 class="flex-grow-1">{%location%}, {%country%}</h6>
+                            <h6 id='current-date-time'></h6>
+                        </div>
+
+                        <div class="d-flex flex-column temp mt-5 mb-3">
+                            <h1 class="mb-0 font-weight-bold" id="heading"> {%temperatureValue%}&#8451; </h1>
+                            <span class="small grey">Min {%temperatureMinValue%}&#8451; | Max {%temperatureMaxValue%}&#8451;</span>
+                            <span class="small grey">{%weatherStatus%}</span>
+                            <span class="small grey">{%windSpeed%} km/h</span>
+                            <span class="small grey">{%humidity%}%</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <script type='text/javascript'>
+            //https://api.openweathermap.org/data/2.5/weather?lat=18.520430&lon=73.856743&appid=d19409cae10007fd2eff2d4be3407fa6
+            let weatherCondition = document.querySelector('#weather-condition')
+
+            const temperatureStatus = 'Clouds'
+
+            let currentTime = new Date()
+
+
+            const getCurrentDay = () => {
+                let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                console.log('Day', weekday[currentTime.getDay()])
+                return weekday[currentTime.getDay()]
+            }
+
+            const getCurrentTime = () => {
+                let months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
+
+                let month = currentTime.getMonth()
+                let date = currentTime.getDate()
+                let year = currentTime.getFullYear()
+
+                let hours = currentTime.getHours()
+                let minute = currentTime.getMinutes()
+
+                // let periods = (hours > 11) ? 'PM' : 'AM'
+
+                minute = (minute < 10) ? `0${minute}` : minute
+
+                console.log('Month', months[month])
+
+                return `${months[month]} ${date} | ${hours}:${minute}`
+
+            }
+
+            (() => {
+                document.querySelector('#current-date-time').innerHTML = `${getCurrentDay()} | ${getCurrentTime()}`
+            })()
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Weather App</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- awesome fontfamily -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+
+   <body class="main-layout inner_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      {{>navbar}}
+      <!-- end header -->
+      <!-- we_do -->
+      <div class="we_do">
+         <div class="container">
+            <section class="vh-100">
+               <div class="container py-5 h-100">
+
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                     <div class="col-md-8 col-lg-6 col-xl-4">
+
+                        <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+
+                        <div class="input-group rounded mb-3">
+                           <input type="search" class="form-control rounded" value="{{weatherData.name}}"
+                              placeholder="City" aria-label="Search" autocomplete="off" aria-describedby="search-addon"
+                              id='search-input' />
+                           <a href="javascript:void(0)" type="button">
+                              <span class="input-group-text border-0 fw-bold" id="search-addon">
+                                 Check!
+                              </span>
+                           </a>
+                        </div>
+
+                        <div class="card shadow-0 border">
+                           <div class="card-body p-4" id='weather-info-div'>
+
+                              <h4 class="mb-1 sfw-normal">{{weatherData.name}},&nbsp;{{weatherData.sys.country}}</h4>
+                              <p class="mb-2">Current temperature: <strong>{{weatherData.main.temp}}°C</strong></p>
+                              <p>Feels like: <strong>{{weatherData.main.feels_like}}°C</strong></p>
+                              <p>Max: <strong>{{weatherData.main.temp_max}}°C</strong>, Min:
+                                 <strong>{{weatherData.main.temp_min}}°C</strong>
+                              </p>
+
+                              <div class="d-flex flex-column align-items-center">
+                                 <p class="mb-0 me-4">{{weatherData.weather.[0].main}}</p>
+                                 <p class="mb-0 me-4">{{weatherData.weather.[0].description}}</p>
+                              </div>
+
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+
+               </div>
+            </section>
+         </div>
+      </div>
+      <!-- end we_do -->
+      <!-- footer -->
+      {{>footers}}
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/custom.js"></script>
+
+      <script type="text/javascript">
+
+         const getWeather = (e) => {
+            e.preventDefault()
+
+            const currentProtocol = window.location.protocol;
+            const currentHost = window.location.host;
+
+            let searchInputElement = document.querySelector('#search-input')
+
+            let queryString = `?city_name=${btoa(searchInputElement.value)}`
+
+            window.location.href=`${currentProtocol}//${currentHost}/weather${queryString}`
+
+         }
+
+         (() => {
+            let checkButtonElement = document.querySelector('#search-addon')
+
+            checkButtonElement.addEventListener('click', getWeather)
+         })()
+      </script>
+   </body>
+
+</html>

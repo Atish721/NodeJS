@@ -1,0 +1,14 @@
+{
+  "name": "wrapperfunction",
+  "version": "1.0.0",
+  "description": "Learn Module Wrapper Function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "bosco",
+  "license": "ISC"
+}
