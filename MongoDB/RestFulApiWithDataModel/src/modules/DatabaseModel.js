@@ -58,14 +58,14 @@ class DataModel {
 
     static async findAll() {
         try {
-          const collection = await connect();
-          const documents = await collection.find({}).toArray();
-          return documents.map((doc) => new DataModel(doc));
+            const collection = await connect();
+            const documents = await collection.find({}).toArray();
+            return documents.map((doc) => new DataModel(doc));
         } catch (err) {
-          console.error('Error finding all documents:', err);
-          throw err;
+            console.error('Error finding all documents:', err);
+            throw err;
         }
-      }
+    }
 }
 
 module.exports = DataModel;
